@@ -75,7 +75,7 @@
 <body>
     <div class="container">
         <h1>My Blog</h1>
-        <section>
+        <section id="viewer-section">
             <h2>Reading</h2>
             <article class="card">
                 <h2>My Article 1</h2>
@@ -111,6 +111,8 @@
                 content: formData.get('content')
             };
             console.log(JSON.stringify(data));
+
+            // Did my Copilot suggest a backend?
             //const response = await fetch('http://localhost:3000/posts', {
             //    method: 'POST',
             //    headers: {
@@ -120,6 +122,13 @@
             //});
             //const result = await response.json();
             //console.log(result);
+
+            // For now, let's just add the data to the viewer
+            var viewerSection = document.getElementById('viewer-section');
+            viewerSection.innerHTML += `<article class="card">
+                <h2>${data.title}</h2>
+                <p>${data.content}</p>
+            </article>`;
         });
     </script>
 </body>
