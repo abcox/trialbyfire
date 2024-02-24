@@ -67,6 +67,10 @@
         font-size: 1em;
         cursor: pointer;
     }
+    .read-time {
+        font-size: .8em;
+        color: #666;
+    }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,6 +84,7 @@
             <h2>Reading</h2>
             <article class="card">
                 <h2>My Article 1</h2>
+                <span class="read-time">5 min read</span>
                 <p>This is the article info</p>
             </article>
             <article class="card">
@@ -103,6 +108,15 @@
         </section>
     </div>
     <script>
+        // todo: add read time to articles
+        // read time pseudo code:
+        // within element where id = viewer-section
+        // for each article element
+        // update element where class is read-time with
+        // read time calc. based on content length
+        // i.e. content = value.match(/\S+/g).length
+
+        // add new post to viewer section
         // early vs. late binding
         // alt. method involved form submit event?
         const form = document.getElementById('main-form');
