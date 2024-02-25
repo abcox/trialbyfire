@@ -112,12 +112,13 @@
                 }
             ];
 
+        const readTimeMins = (content) => Math.ceil(content.match(/\S+/g).length / 200);
+
         articles.forEach(article => {
             const viewerSection = document.getElementById('viewer-section');
-            const readTimeMins = Math.ceil(article.content.match(/\S+/g).length / 200);
             viewerSection.innerHTML += `<article class="card">
                 <h2>${article.title}</h2>
-                <span class="read-time">${readTimeMins} min read</span>
+                <span class="read-time">${readTimeMins(article.content)} min read</span>
                 <p>${article.content}</p>
             </article>`;
         });
@@ -150,6 +151,7 @@
             var viewerSection = document.getElementById('viewer-section');
             viewerSection.innerHTML += `<article class="card">
                 <h2>${data.title}</h2>
+                <span class="read-time">${readTimeMins(article.content)} min read</span>
                 <p>${data.content}</p>
             </article>`;
         });
