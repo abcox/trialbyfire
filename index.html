@@ -114,8 +114,10 @@
 
         articles.forEach(article => {
             const viewerSection = document.getElementById('viewer-section');
+            const readTimeMins = Math.ceil(article.content.match(/\S+/g).length / 200);
             viewerSection.innerHTML += `<article class="card">
                 <h2>${article.title}</h2>
+                <span class="read-time">${readTimeMins} min read</span>
                 <p>${article.content}</p>
             </article>`;
         });
